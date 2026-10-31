@@ -3622,6 +3622,85 @@ body.c123-compressed .c123-dot-hit{touch-action:none}
 body.c122-kinetic[data-c122-still="true"] .node.c112-orb .ntitle{transition:none!important}
 
 </style>
+<style id="ra-c124-contrast-canonical-css">
+/* Research Atlas C124 | Canonical contrast repair 2026-10-31
+   Scope: presentation colors only. No graph, camera, JS, DATA, layout or content changes.
+   Target: WCAG AA 4.5:1 normal-text contrast in sampled interactive states. */
+
+/* The literature workspace originally exposed light-only --a-sub/--a-tint in dark mode.
+   The former [data-ra84-color=dark] selector was stale: the actual settings use
+   [data-ra85-color-mode=dark]. Keep fixed-color scientific heatmap semantics intact. */
+body[data-ra85-color-mode="dark"] :is(#c111aDesk,#c111aEvidenceTrace) {
+  --a-ink:#edf5fb;
+  --a-sub:#ccdfed;
+  --a-accent:#9dd9ef;
+  --a-line:#526b80;
+  --a-tint:#263d50;
+}
+body[data-ra85-color-mode="dark"] #c111aDesk :is(
+  .c111a-facets label,.c111a-compare-add,.c111a-linksetup label,
+  .c111a-card p,.c111a-cardmeta,.c111a-gapclass,
+  .c111a-matrixtable th,.c111a-viewhead p
+) {color:#cfe1ee!important}
+body[data-ra85-color-mode="dark"] #c111aDesk :is(.c111a-viewhead strong,.c111a-timelist button b) {color:#9bdbf2!important}
+body[data-ra85-color-mode="dark"] #c111aDesk :is(.c111a-card,.c111a-result-count,.c111a-gaplist details,.c111a-matrixtable th,.c111a-matrixtable tbody th,.c111a-comparetable tbody th){border-color:var(--a-line)}
+body[data-ra85-color-mode="dark"] #c111aDesk :is(.c111a-result-count,.c111a-related){background:var(--a-tint)!important;color:#e9f3fb!important}
+body[data-ra85-color-mode="dark"] #c111aDesk :is(.c111a-command button:hover,.c111a-view button:hover){background:#304c62!important;color:#f0f7fc!important}
+body[data-ra85-color-mode="dark"] #c111aDesk #c111aDeskToggle{background:#263e51!important;color:#eaf3fb!important}
+
+/* The selected tab was pale with dark text; adjacent native dark button defaults
+   inherited nearly the same gray as their labels (observed ~1.20:1). */
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab],
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab]:not(.active){
+  background:#263e51!important;color:#dceaf5!important;border:1px solid #526d82!important;
+}
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab].active,
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab][aria-selected="true"]{
+  background:#266080!important;color:#ffffff!important;border-color:#72abc5!important;
+}
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab]:hover:not(.active){
+  background:#31546b!important;color:#fff!important;
+}
+body[data-ra85-color-mode="dark"] #c111aDesk .c111a-nav [data-c111a-tab]:focus-visible{
+  outline:3px solid #b4e4fa!important;outline-offset:2px;
+}
+
+/* The main theme tabs retained #fff while labels switched to pale text. */
+body[data-ra85-color-mode="dark"] .tab:not(.active){
+  background:#263e51!important;color:#e3eff8!important;border-color:#58758b!important;
+}
+body[data-ra85-color-mode="dark"] .tab:hover:not(.active){
+  background:#34556a!important;color:#fff!important;
+}
+
+/* Light mode: secondary 11px navigation labels (3.85:1) and scientific summary
+   captions (4.42:1) also missed the normal text threshold. */
+body:not([data-ra85-color-mode="dark"]) #c111aDesk .c111a-nav [data-c111a-tab]:not(.active){
+  background:#f0f5f8;color:#385971;border:1px solid #d2e2eb;
+}
+body:not([data-ra85-color-mode="dark"]) #c111aDesk :is(.c111a-facets label,.c111a-compare-add,.c111a-linksetup label,.c111a-cardmeta,.c111a-card p,.c111a-gapclass,.c111a-matrixtable th){
+  color:#4b667b;
+}
+body:not([data-ra85-color-mode="dark"]) #c111aDesk .c111a-cell.c111a-density-0{
+  color:#526576;
+}
+
+/* Focus remains discernible without depending solely on blue hue. */
+#c111aDesk .c111a-nav [data-c111a-tab]:focus-visible{outline:3px solid var(--accent,#176db0)!important;outline-offset:2px}
+/* #tabs is the stable ancestor of dynamically generated theme filters. The
+   legacy dark :is(...) rule contains an ID selector, so an equally-scoped ID
+   is required for this override to win CSS specificity. */
+body[data-ra85-color-mode="dark"] #tabs .tab:not(.active){
+  background:#263e51!important;color:#e3eff8!important;border-color:#58758b!important;
+}
+body[data-ra85-color-mode="dark"] #tabs .tab:hover:not(.active){
+  background:#34556a!important;color:#fff!important;
+}
+/* No light-background transition frame may survive a theme switch: foreground
+   switches instantly. Only filter-tab color transitions are suppressed. */
+body[data-ra85-color-mode="dark"] #tabs .tab:not(.active){transition:none!important}
+
+</style>
 <script id="c123-kinetic-js">
 /* C123: focus compression on the C122 spring engine. Scientific data is unchanged. */
 (() => {
